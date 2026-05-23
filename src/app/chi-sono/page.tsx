@@ -1,0 +1,1 @@
+export default function P(){return <main className='containerx py-10 space-y-4'><h1 className='text-4xl'>Chi sono</h1><p>Sono un docente di fisica e matematica: uso visualizzazioni, esercizi guidati e simulazioni per rendere i concetti comprensibili.</p><p>Timeline: laurea, ricerca, docenza, laboratorio digitale.</p></main>}
