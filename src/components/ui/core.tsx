@@ -22,7 +22,11 @@ export const RevealOnScroll = ({ children, className }: { children: React.ReactN
 export const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const reduce = useReducedMotion();
   return (
-    <motion.div initial={reduce ? undefined : { opacity: 0, y: 16 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
+    <motion.div
+      initial={reduce ? undefined : { opacity: 0, y: 24, scale: 0.99, filter: 'blur(6px)' }}
+      animate={reduce ? undefined : { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+    >
       {children}
     </motion.div>
   );

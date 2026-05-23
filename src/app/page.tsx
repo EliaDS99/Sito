@@ -3,12 +3,20 @@ import { exercises } from '@/data/exercises';
 import { animations } from '@/data/animations';
 import { learningPaths } from '@/data/paths';
 import ParallaxHero from '@/components/sections/ParallaxHero';
+import ScrollDrivenScene from '@/components/sections/ScrollDrivenScene';
+import { HeroScrollDemo } from '@/components/sections/HeroScrollDemo';
 import { FormulaBlock, GlassCard, RevealOnScroll, SectionHeader } from '@/components/ui/core';
 
 export default function Home() {
   return (
     <main className='containerx py-10 md:py-14 space-y-20'>
       <ParallaxHero />
+
+
+      <RevealOnScroll>
+        <SectionHeader title='Esperienza 3D guidata dallo scroll' subtitle='La scena reagisce direzionalmente: avanti quando scrolli in basso, indietro quando torni su.' />
+        <HeroScrollDemo />
+      </RevealOnScroll>
 
       <RevealOnScroll>
         <SectionHeader title='Cosa trovi qui' subtitle='Una piattaforma con ritmo visivo, contenuti modulari e laboratorio interattivo.' />
