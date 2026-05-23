@@ -23,3 +23,9 @@ body {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+
+.loader{width:28px;height:28px;border:3px solid rgba(255,255,255,.25);border-top-color:#67e8f9;border-radius:50%;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spotlight{0%{opacity:0;transform:translateY(72px) scale(.6)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.animate-spotlight{animation:spotlight 1.2s ease .2s forwards}

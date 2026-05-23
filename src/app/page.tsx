@@ -5,6 +5,7 @@ import { learningPaths } from '@/data/paths';
 import ParallaxHero from '@/components/sections/ParallaxHero';
 import ScrollDrivenScene from '@/components/sections/ScrollDrivenScene';
 import { HeroScrollDemo } from '@/components/sections/HeroScrollDemo';
+import { SplineSceneBasic } from '@/components/sections/SplineSceneBasic';
 import { FormulaBlock, GlassCard, RevealOnScroll, SectionHeader } from '@/components/ui/core';
 
 export default function Home() {
@@ -57,6 +58,12 @@ export default function Home() {
             </GlassCard>
           ))}
         </div>
+      </RevealOnScroll>
+
+
+      <RevealOnScroll>
+        <SectionHeader title='Laboratorio 3D Astrofisica' subtitle='Scena interattiva dedicata a orbite, gravità e geometrie spaziali.' />
+        <SplineSceneBasic />
       </RevealOnScroll>
 
       <RevealOnScroll>
