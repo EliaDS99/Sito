@@ -1,0 +1,2 @@
+import { exercises } from '@/data/exercises';import { notFound } from 'next/navigation';
+export default function D({params}:{params:{slug:string}}){const e=exercises.find(x=>x.slug===params.slug); if(!e) return notFound(); return <main className='containerx py-10 space-y-3'><h1 className='text-4xl'>{e.title}</h1><p>{e.text}</p><p><b>Dati:</b> {e.data.join(', ')}</p><p><b>Obiettivo:</b> {e.objective}</p><details className='rounded-xl border border-white/10 p-4'><summary>Soluzione espandibile</summary>{e.solutionSteps.map(s=><p key={s}>• {s}</p>)}</details></main>}

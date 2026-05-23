@@ -1,0 +1,2 @@
+import Link from 'next/link';import { learningPaths } from '@/data/paths';import { GlassCard } from '@/components/ui/core';
+export default function P(){return <main className='containerx py-10'><h1 className='text-4xl mb-6'>Percorsi</h1><div className='grid md:grid-cols-2 gap-4'>{learningPaths.map(p=><GlassCard key={p.id}><Link href={`/percorsi/${p.slug}`}><h3>{p.title}</h3><p>{p.description}</p></Link></GlassCard>)}</div></main>}
