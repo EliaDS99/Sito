@@ -1,49 +1,47 @@
 # Prof STEM Lab
-Piattaforma didattica premium (v1) per un professore di fisica e matematica.
 
-## Stack
-- Next.js App Router + TypeScript
-- Tailwind CSS
-- Framer Motion
-- lucide-react
-- Dati locali TypeScript
+Piattaforma didattica dinamica per fisica e matematica con UI animata, percorsi modulari e laboratorio simulazioni.
+
+## Requisiti
+- Node.js **>= 18.17** (consigliato Node 20 LTS)
+- npm >= 9
+
+## Setup rapido Linux
+```bash
+curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+nvm install 20
+nvm use 20
+```
 
 ## Installazione e avvio
 ```bash
 npm install
 npm run dev
 ```
+Apri `http://localhost:3000`.
 
-## Come aggiungere una nuova lezione
-1. Apri `src/data/lessons.ts`.
-2. Aggiungi un oggetto `Lesson` con `slug` univoco e collegamenti a esercizi/animazioni.
-3. La pagina sarà disponibile in `/teoria/[slug]`.
+## Route principali
+`/`, `/teoria`, `/esercizi`, `/animazioni`, `/percorsi`, `/risorse`, `/chi-sono`, `/contatti` + dettaglio `[slug]`.
 
-## Come aggiungere un nuovo esercizio
-1. Apri `src/data/exercises.ts`.
-2. Inserisci il nuovo oggetto `Exercise`.
-3. Appare in `/esercizi` e nella route dinamica `/esercizi/[slug]`.
+## Aggiungere contenuti
+- Lezioni: `src/data/lessons.ts`
+- Esercizi: `src/data/exercises.ts`
+- Animazioni: `src/data/animations.ts`
+- Percorsi: `src/data/paths.ts`
 
-## Come aggiungere una nuova animazione Java
-1. Crea cartella in `public/animations/java/nome/`.
-2. Inserisci file scaricabili (`.jar`, README, ecc.).
-3. Registra la simulazione in `src/data/animations.ts` con:
-   - `type: "java"`
-   - `filePath`
-   - `downloadUrl`
-   - `launchInstructions`
+## Simulazioni Java
+1. Inserisci file in `public/animations/java/<nome>/`
+2. Aggiungi item con `type: "java"`, `filePath`, `downloadUrl`, `launchInstructions` in `src/data/animations.ts`
 
-## Struttura cartelle
-- `src/app`: routing e pagine
-- `src/components`: UI riusabile
-- `src/data`: contenuti locali
-- `src/types`: modelli TypeScript
-- `public/animations/java`: area simulazioni Java
-- `public/resources`: area materiali scaricabili
+## Struttura
+- `src/app` pagine e routing
+- `src/components` componenti riusabili e animazioni
+- `src/data` contenuti locali tipizzati
+- `src/types` modelli
 
-## Prossimi sviluppi consigliati
-- MDX reale per contenuti lunghi
-- integrazione KaTeX
-- backend CMS opzionale
-- autenticazione studenti
-- tracking progresso reale
+## Prossimi step consigliati
+- Migrare contenuti lunghi in MDX
+- Aggiungere KaTeX per formule avanzate
+- Collegare backend/CMS in seconda fase
