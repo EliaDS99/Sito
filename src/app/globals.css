@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(34,211,238,.14), transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(139,92,246,.18), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(59,130,246,.12), transparent 24%);
+}
+
+.containerx { @apply mx-auto max-w-7xl px-4 md:px-8; }
+.grid-science {
+  background-image: linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.glass { @apply border border-white/15 bg-white/5 backdrop-blur-xl; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}

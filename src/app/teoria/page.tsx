@@ -1,0 +1,2 @@
+import { lessons } from '@/data/lessons';import { SearchAndFilters,ContentCard } from '@/components/content/ClientFilters';
+export default function P(){return <main className='containerx py-10'><h1 className='text-4xl mb-6'>Teoria</h1><SearchAndFilters items={lessons} extraFilter={(i,e)=>e==='Tutti'||i.level===e as any} extraOptions={['Base','Intermedio','Avanzato']} render={(l)=><ContentCard key={l.id} title={l.title} desc={l.description} badges={[l.subject,l.topic,l.level,l.status]} href={`/teoria/${l.slug}`}/>}/></main>}

@@ -1,0 +1,2 @@
+import { learningPaths } from '@/data/paths';import { notFound } from 'next/navigation';
+export default function D({params}:{params:{slug:string}}){const p=learningPaths.find(x=>x.slug===params.slug); if(!p) return notFound(); return <main className='containerx py-10'><h1 className='text-4xl'>{p.title}</h1><p>{p.description}</p><p>Durata: {p.estimatedDuration} · Livello: {p.level}</p><ul>{p.modules.map(m=><li key={m}>• {m}</li>)}</ul></main>}

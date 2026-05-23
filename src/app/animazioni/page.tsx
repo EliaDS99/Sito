@@ -1,0 +1,2 @@
+import { animations } from '@/data/animations';import { SearchAndFilters,ContentCard } from '@/components/content/ClientFilters';
+export default function P(){return <main className='containerx py-10'><h1 className='text-4xl mb-6'>Animazioni</h1><SearchAndFilters items={animations} extraFilter={(i,e)=>e==='Tutti'||i.type===e.toLowerCase() as any} extraOptions={['Java','Iframe','Canvas','Video','Placeholder']} render={(l)=><ContentCard key={l.id} title={l.title} desc={l.description} badges={[l.subject,l.topic,l.type]} href={`/animazioni/${l.slug}`}/>}/></main>}
