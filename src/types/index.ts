@@ -1,0 +1,6 @@
+export type Subject='Fisica'|'Matematica'; export type Level='Base'|'Intermedio'|'Avanzato';
+export type Lesson={id:string;slug:string;title:string;description:string;subject:Subject;topic:string;level:Level;tags:string[];readingTime:string;status:'pubblicato'|'in preparazione';content:string;keyConcept:string;commonMistake:string;relatedExercises:string[];relatedAnimations:string[]};
+export type Exercise={id:string;slug:string;title:string;description:string;subject:Subject;topic:string;difficulty:Level;hasSolution:boolean;text:string;data:string[];objective:string;hints:string[];solutionSteps:string[];relatedLessons:string[];relatedAnimations:string[]};
+export type AnimationItem={id:string;slug:string;title:string;description:string;subject:Subject;topic:string;type:'java'|'iframe'|'canvas'|'video'|'placeholder';filePath?:string;downloadUrl?:string;embedUrl?:string;previewType:'grid'|'wave'|'field';launchInstructions:string[];relatedLessons:string[];relatedExercises:string[];parameters:string[]};
+export type LearningPath={id:string;slug:string;title:string;description:string;subject:Subject;level:Level;estimatedDuration:string;modules:string[];lessons:string[];exercises:string[];animations:string[];progress:number};
+export type Resource={id:string;title:string;kind:string;description:string;href:string};

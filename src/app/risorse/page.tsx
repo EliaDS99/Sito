@@ -1,0 +1,1 @@
+import { resources } from '@/data/resources'; export default function P(){return <main className='containerx py-10'><h1 className='text-4xl mb-6'>Risorse</h1><ul>{resources.map(r=><li key={r.id}><a className='underline' href={r.href}>{r.title}</a> - {r.description}</li>)}</ul></main>}
